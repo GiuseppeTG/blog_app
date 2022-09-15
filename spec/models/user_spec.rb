@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  subject { User.create(name: 'Giuseppe', photo: 'photo url', bio:'This should be a longer text', posts_counter: 0) }
+  subject { User.create(name: 'Giuseppe', photo: 'photo url', bio: 'This should be a longer text', posts_counter: 0) }
 
   it 'User must have a name' do
     subject.name = nil

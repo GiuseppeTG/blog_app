@@ -6,7 +6,7 @@ RSpec.describe Post, type: :model do
       author: User.create(
         name: 'Giuseppe',
         photo: 'Photo url',
-        bio: "A bio",
+        bio: 'A bio',
         posts_counter: 0
       ),
       title: 'Post title',
@@ -15,7 +15,6 @@ RSpec.describe Post, type: :model do
       likes_counter: 0
     )
   end
-
 
   it 'Post must have a title' do
     subject.title = nil
@@ -26,7 +25,7 @@ RSpec.describe Post, type: :model do
     subject.title = 'a' * 300
     expect(subject).to_not be_valid
   end
-  
+
   it 'Comments counter must be an integer greater than or equal to zero' do
     subject.comments_counter = -3
     expect(subject).to_not be_valid
@@ -45,5 +44,4 @@ RSpec.describe Post, type: :model do
     10.times { subject.comments.create(text: 'Comment', author: subject.author) }
     expect(subject.show_recent_comments.count).to eq(5)
   end
-
 end
