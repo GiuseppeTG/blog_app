@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  belongs_to :author, class_name: 'User'
+  belongs_to :author, class_name: 'User', foreign_key: :author_id
   has_many :comments
   has_many :likes
 
@@ -7,11 +7,16 @@ class Post < ApplicationRecord
   validates :comments_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validates :likes_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
-  def show_recent_comments
-    comments.order('created_at DESC').limit(5)
+  after_initialize do |post|
+    post.likes_counter = 0
+    post.comments_counter = 0
   end
 
   def update_posts_counter
-    author.posts_counter = author.posts.length
+    author.increment!(:posts_counter)
+  end
+
+  def show_recent_comments
+    comments.order(updated_at: :desc).first(5)
   end
 end
