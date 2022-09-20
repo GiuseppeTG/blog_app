@@ -1,0 +1,9 @@
+<h1>A list of posts</h1>
+
+<div>
+  <% @posts.each do |post| %>
+    <div>
+      title: <%= post[:title]%>
+    </div>
+  <% end %>  
+</div>
