@@ -1,5 +1,39 @@
-<h1>A specific post</h1>
+<main>
+  <a href="/users/<%=@user[:id]%>" class="return-button">
+    <button type="button">
+      Return
+    </button>
+  </a>
 
-<p>
-  <%= @params %>
-</p>
+  <div class="user-card"> <%# this can be a partial? %>
+    <a href="/users/<%=@user[:id]%>" class="user-link">
+      <img src="<%=@user.photo || image_url('no_profile_pic.png') %>" alt="<%=@user.name %>" class="user-image" />
+      <h2 class="user-name"><%= @user[:name] %></h2> 
+    </a>
+    <p class="posts-counter">Posts: <%= @user[:posts_counter] %> </p>
+  </div>
+
+  <section class="single-post-container">
+    <h2><%= @post[:title]%></h2>
+    <p class="single-post-content"><%= @post[:text]%></p>
+    <div class="counters">
+      <p>Comments: <%= @post[:comments_counter]%></p>
+      <p>Likes: <%= @post[:likes_counter]%></p>
+    </div>
+  </section>
+
+  <section class="single-post-comments">
+    <h2>Comments</h2>
+    <%@comments.each do |comment|
+          commenter = @users.find_by(id:comment[:author_id]) %>
+            <div class="comment-container">
+              <div class="commenter">
+                <a href="/users/<%=commenter[:id]%>">
+                  <img src="<%=commenter[:photo] || image_url('no_profile_pic.png') %>" alt="<%=@user.name %>" class="user-image commenter-image" />
+                </a><h4><%=commenter[:name]%></h4>
+              </div>
+              <p><%=comment[:text]%></p>
+            </div>           
+          <%end%>
+  </section>
+</main>

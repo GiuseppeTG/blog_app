@@ -1,5 +1,38 @@
-<h1>A specific user</h1>
+<main>
+  <a href="/users" class="return-button">
+    <button type="button">
+      Return
+    </button>
+  </a>
 
-<p>
-  <%= @params %>
-</p>
+  <div class="user-card"> <%# this can be a partial %>
+    <a href="/users/<%=@user[:id]%>" class="user-link">
+      <img src="<%=@user.photo || image_url('no_profile_pic.png') %>" alt="<%=@user.name %>" class="user-image" />
+      <h2 class="user-name"><%= @user[:name] %></h2> 
+    </a>
+    <p class="posts-counter">Posts: <%= @user[:posts_counter] %> </p>
+  </div>
+
+  <section class="bio">
+    <h2>Bio</h2>
+    <p><%= @user[:bio] %></p>
+  </section>
+
+  <section class="user-posts-small">
+    <h2>Posts by <%=@user[:name]%></h2>
+    <% @recent_posts.each do |post| %>
+      <div class="post-container-small">
+        <div class="title-button">
+          <h3><%= post[:title]%></h3>
+          <a class="see-post-button" href="<%=@user[:id]%>/posts/<%=post[:id]%>">
+            <button type="button">See this post</button>
+          </a>  
+        </div>
+        <p><%= post[:text] %></p>
+      </div>
+    <% end %>
+  </section>
+  <a href="/users/<%=@user[:id]%>/posts" class="see-more-button">
+    <button type="button">See all posts</button>
+  </a>
+</main>
