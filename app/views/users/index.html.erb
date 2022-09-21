@@ -3,10 +3,10 @@
 <div class="users-container">
   <% @users.each do |user| %>
     <div class="user-box">
-      <div class="profile-pic-container">
-        <img src=<%user[:photo]%> class="user-image" alt="user">
-      </div>
       <h2 class="user-name"><%= user[:name] %></h2>
+      <div class="profile-pic-container">
+        <img src=<%= user[:photo] %> class="user-image" alt="user">
+      </div>
       <p class="posts-counter">Number of posts: <%= user[:posts_counter] %> </p>
     </div>
   <% end %>  
