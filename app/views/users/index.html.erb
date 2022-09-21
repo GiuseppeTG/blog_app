@@ -1,9 +1,13 @@
-<h1>A list of users</h1>
-
-<div>
-  <% @users.each do |user| %>
-    <div>
-      name: <%= user[:name]%> id: <%= user[:id]%>
-    </div>
-  <% end %>  
-</div>
+<main>
+  <section class="users-container">
+    <% @users.each do |user| %>
+      <div class="user-card"> <%# this can be a partial %>
+        <a href="/users/<%=user[:id]%>" class="user-link">
+          <img src="<%=user.photo || image_url('no_profile_pic.png') %>" alt="<%=user.name %>" class="user-image" />
+          <h2 class="user-name"><%= user[:name] %></h2> 
+        </a>
+        <p class="posts-counter">Posts: <%= user[:posts_counter] %> </p>
+      </div>
+    <% end %>  
+  </section>
+</main>

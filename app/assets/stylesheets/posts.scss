@@ -1,0 +1,45 @@
+.post-container {
+  width: 100%;
+  border: black solid 1px;
+  padding: 1rem 2rem;
+  margin-bottom: 1rem;
+}
+
+.comments-list {
+  margin-top: 1rem;
+}
+
+.comment-container {
+  border: black solid 1px;
+  padding: 1rem 2rem;
+  margin-bottom: 1rem;
+}
+
+.post-content {
+  border: black solid 1px;
+  padding: 1rem 2rem;
+}
+
+.counters {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.commenter {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.user-image.commenter-image {
+  width: 2rem;
+  height: 2rem;
+  outline: none;
+}
+
+.pagination-buttons {
+  display: flex;
+  gap: 2rem;
+  margin: auto;
+}
