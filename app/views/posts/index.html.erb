@@ -5,13 +5,15 @@
     </button>
   </a>
 
-  <div class="user-card"> <%# this can be a partial %>
-      <a href="/users/<%=@user[:id]%>" class="user-link">
+  <%= link_to user_path(@user) do%>
+    <div class="user-card"> <%# this can be a partial %>
         <img src="<%=@user.photo || image_url('no_profile_pic.png') %>" alt="<%=@user.name %>" class="user-image" />
         <h2 class="user-name"><%= @user[:name] %></h2> 
-      </a>
       <p class="posts-counter">Posts: <%= @user[:posts_counter] %> </p>
-  </div>
+    </div>
+  <%end%>
+
+ <%= link_to "New post", new_user_post_path %>
 
   <section class="posts-list">
     <% @posts.each do |post| %>

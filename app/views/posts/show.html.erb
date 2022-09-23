@@ -5,13 +5,13 @@
     </button>
   </a>
 
-  <div class="user-card"> <%# this can be a partial? %>
-    <a href="/users/<%=@user[:id]%>" class="user-link">
-      <img src="<%=@user.photo || image_url('no_profile_pic.png') %>" alt="<%=@user.name %>" class="user-image" />
-      <h2 class="user-name"><%= @user[:name] %></h2> 
-    </a>
-    <p class="posts-counter">Posts: <%= @user[:posts_counter] %> </p>
-  </div>
+  <%= link_to user_path(@user) do%>
+    <div class="user-card"> <%# this can be a partial %>
+        <img src="<%=@user.photo || image_url('no_profile_pic.png') %>" alt="<%=@user.name %>" class="user-image" />
+        <h2 class="user-name"><%= @user[:name] %></h2> 
+      <p class="posts-counter">Posts: <%= @user[:posts_counter] %> </p>
+    </div>
+  <%end%>
 
   <section class="single-post-container">
     <h2><%= @post[:title]%></h2>
@@ -21,6 +21,11 @@
       <p>Likes: <%= @post[:likes_counter]%></p>
     </div>
   </section>
+
+  <%= render 'comments/form' %>
+  <%= form_with url: user_post_likes_url(@user, @post), method: 'post' do |form| %>
+    <%= form.submit 'Like' %>
+  <% end %>
 
   <section class="single-post-comments">
     <h2>Comments</h2>
