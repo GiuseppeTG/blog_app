@@ -21,7 +21,7 @@ To get a local copy up and running, follow these simple example steps:
 ### Prerequisites
 code editor and browser
 
-## Authors
+## Author
 
 👤 **Giuseppe Tomasini**
 
