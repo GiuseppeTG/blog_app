@@ -4,19 +4,22 @@
       Return
     </button>
   </a>
-
-  <div class="user-card"> <%# this can be a partial %>
-    <a href="/users/<%=@user[:id]%>" class="user-link">
-      <img src="<%=@user.photo || image_url('no_profile_pic.png') %>" alt="<%=@user.name %>" class="user-image" />
-      <h2 class="user-name"><%= @user[:name] %></h2> 
-    </a>
-    <p class="posts-counter">Posts: <%= @user[:posts_counter] %> </p>
-  </div>
+  <%= link_to user_path(@user) do%>
+    <div class="user-card"> <%# this can be a partial %>
+        <img src="<%=@user.photo || image_url('no_profile_pic.png') %>" alt="<%=@user.name %>" class="user-image" />
+        <h2 class="user-name"><%= @user[:name] %></h2> 
+      <p class="posts-counter">Posts: <%= @user[:posts_counter] %> </p>
+    </div>
+  <%end%>
 
   <section class="bio">
     <h2>Bio</h2>
     <p><%= @user[:bio] %></p>
   </section>
+
+  <%= link_to new_user_post_path(@user) do%>
+    <button class="new-post-button">New post</button>
+  <%end%>
 
   <section class="user-posts-small">
     <h2>Posts by <%=@user[:name]%></h2>

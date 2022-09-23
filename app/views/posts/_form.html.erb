@@ -1,0 +1,15 @@
+<%= form_with model: @post, url: user_posts_path, method: :post, scope: :post, local: true do |form| %>
+  <ul class="new-post-form">
+    <li>
+      <%= form.label :title%>
+      <%= form.text_field :title, placeholder: "Enter post's title...", :required => true %>
+    </li>
+    <li>
+      <%= form.label :text%>
+      <%= form.text_area :text, placeholder: "Enter post content...", :required => true %>
+    </li>
+    <li>
+      <%= form.submit class: "submit-button" %>
+    </li>
+  </ul>
+<% end %>
