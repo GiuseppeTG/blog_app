@@ -19,6 +19,10 @@
     <div class="counters">
       <p>Comments: <%= @post[:comments_counter]%></p>
       <p>Likes: <%= @post[:likes_counter]%></p>
+      <%= form_with url: user_post_likes_url(@user, @post), method: 'post' do |form| %>
+      <i class="fa-regular fa-heart"></i>
+        <button type="submit" class="like-button"></button>
+      <% end %>
     </div>
   </section>
 

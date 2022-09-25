@@ -4,9 +4,9 @@
       <%= form.label :title%>
       <%= form.text_field :title, placeholder: "Enter post's title...", :required => true %>
     </li>
-    <li>
+    <li class="text-area">
       <%= form.label :text%>
-      <%= form.text_area :text, placeholder: "Enter post content...", :required => true %>
+      <%= form.text_area :text, placeholder: "Enter post content...", :required => true%>
     </li>
     <li>
       <%= form.submit class: "submit-button" %>

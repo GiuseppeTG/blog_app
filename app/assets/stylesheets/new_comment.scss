@@ -1,0 +1,11 @@
+@import 'variables.scss';
+
+.new-comment-form {
+  width: 100%;
+  list-style: none;
+}
+
+#comment_text {
+  width: 100%;
+  padding: 0.5rem;
+}

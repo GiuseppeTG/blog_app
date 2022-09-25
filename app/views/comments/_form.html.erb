@@ -1,11 +1,8 @@
-<p><b>Comment on <%=@post.author[:name]%>'s post</b><p>
+<h3>Comment on <%=@post.author[:name]%>'s post</h3>
 
 <%= form_with url: user_post_comments_path(@user, @post), method: :post, local: true, scope: :comment do |form| %>
-  <div>
-    <%= form.text_area :text, :required => true %>
-  </div>
-
-  <div>
-  <%= form.submit "Post Comment" %>
-</div>
+  <ul class="new-comment-form">  
+    <li><%= form.text_area :text, :required => true, :placeholder => "Write your comment..." %></li>
+    <li><%= form.submit "Post Comment" %></li>
+  </ul>  
 <% end %>
