@@ -1,5 +1,5 @@
 <%= link_to user_path(@user) do%>
-  <div class="user-card"> <%# this can be a partial %>
+  <div class="user-card shadow"> <%# this can be a partial %>
       <img src="<%=@user.photo || image_url('no_profile_pic.png') %>" alt="<%=@user.name %>" class="user-image" />
       <h2 class="user-name"><%= @user[:name] %></h2> 
     <p class="posts-counter">Posts: <%= @user[:posts_counter] %> </p>

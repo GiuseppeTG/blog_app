@@ -3,3 +3,12 @@
 .single-post-comments h2 {
   margin-bottom: 1rem;
 }
+
+.counters {
+  display: flex;
+  align-items: center;
+}
+
+.counters> :last-child {
+  margin-left: auto;
+}

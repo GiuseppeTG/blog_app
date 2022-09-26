@@ -20,29 +20,26 @@
       <p>Comments: <%= @post[:comments_counter]%></p>
       <p>Likes: <%= @post[:likes_counter]%></p>
       <%= form_with url: user_post_likes_url(@user, @post), method: 'post' do |form| %>
-      <i class="fa-regular fa-heart"></i>
-        <button type="submit" class="like-button"></button>
+        <button type="submit" class="like-button">Like</button>
       <% end %>
     </div>
   </section>
 
   <%= render 'comments/form' %>
-  <%= form_with url: user_post_likes_url(@user, @post), method: 'post' do |form| %>
-    <%= form.submit 'Like' %>
-  <% end %>
+  
 
   <section class="single-post-comments">
     <h2>Comments</h2>
     <%@comments.each do |comment|
-          commenter = @users.find_by(id:comment[:author_id]) %>
-            <div class="comment-container">
-              <div class="commenter">
-                <a href="/users/<%=commenter[:id]%>">
-                  <img src="<%=commenter[:photo] || image_url('no_profile_pic.png') %>" alt="<%=@user.name %>" class="user-image commenter-image" />
-                </a><h4><%=commenter[:name]%></h4>
-              </div>
-              <p><%=comment[:text]%></p>
-            </div>           
-          <%end%>
+    commenter = @users.find_by(id:comment[:author_id]) %>
+      <div class="comment-container">
+        <div class="commenter">
+          <a href="/users/<%=commenter[:id]%>">
+            <img src="<%=commenter[:photo] || image_url('no_profile_pic.png') %>" alt="<%=@user.name %>" class="user-image commenter-image" />
+          </a><h4><%=commenter[:name]%></h4>
+        </div>
+        <p><%=comment[:text]%></p>
+      </div>           
+    <%end%>
   </section>
 </main>

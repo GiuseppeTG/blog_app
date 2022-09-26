@@ -5,7 +5,7 @@
    
   <%= render "users/card"%>
 
-  <section class="bio">
+  <section class="bio shadow">
     <h2>Bio</h2>
     <p><%= @user[:bio] %></p>
   </section>
@@ -17,7 +17,7 @@
   <section class="user-posts-small">
     <h2>Posts by <%=@user[:name]%></h2>
     <% @recent_posts.each do |post| %>
-      <div class="post-container-small">
+      <div class="post-container-small shadow">
         <div class="title-button">
           <h3><%= post[:title]%></h3>
           <%= link_to user_post_path(@user, post) do%>

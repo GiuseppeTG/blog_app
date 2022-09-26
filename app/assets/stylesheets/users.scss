@@ -8,7 +8,8 @@
 }
 
 body {
-  background: linear-gradient(rgb(218, 250, 255), rgb(220, 223, 255))
+  background: linear-gradient(rgb(218, 250, 255), rgb(220, 223, 255));
+  min-height: 100vh;
 }
 
 a {
@@ -45,6 +46,10 @@ section {
   padding: 1rem 2rem;
   border: black solid 1px;
   border-radius: 5px;
+}
+
+.shadow {
+  box-shadow: 0 0 1rem 0 (rgba(0, 0, 0, 0.282));
 }
 
 .user-card {
