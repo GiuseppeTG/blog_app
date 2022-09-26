@@ -8,6 +8,7 @@ AllCops:
     - "Rakefile"
     - "node_modules/**/*"
     - "test/controllers/*"
+    - "db/seeds.rb"
 
   DisplayCopNames: true
 
