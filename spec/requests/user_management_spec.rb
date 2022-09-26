@@ -40,3 +40,14 @@ RSpec.describe 'User management', type: :request do
     end
   end
 end
+
+RSpec.describe 'Users index page', type: :feature do
+  scenario 'Can see index page' do
+    visit users_path
+    expect(page).to have_content('Users')
+  end
+  scenario 'Can see index page' do
+    visit users_path
+    expect(page).to have_content('Users')
+  end
+end
