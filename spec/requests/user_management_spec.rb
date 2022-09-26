@@ -22,21 +22,21 @@ RSpec.describe 'User management', type: :request do
   end
 
   it 'Redirects to the specific user page' do
-    get '/users/7'
+    get '/users/1'
     expect(response).to render_template(:show)
   end
 
   describe 'User views' do
     it 'Has a user related heading' do
       get '/users'
-      expect(response.body).to include('A list of users')
+      expect(response.body).to include('Users')
     end
   end
 
   describe 'Specific user views' do
     it 'Has a user related heading' do
-      get '/users/7'
-      expect(response.body).to include('A specific user')
+      get '/users/1'
+      expect(response.body).to include('Return')
     end
   end
 end
