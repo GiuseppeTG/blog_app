@@ -1,13 +1,32 @@
-$black: rgb(20, 20, 20);
+@import 'variables.scss';
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: $poppins;
+}
+
+body {
+  background: linear-gradient(rgb(218, 250, 255), rgb(220, 223, 255));
+  min-height: 100vh;
 }
 
 a {
   text-decoration: none;
+}
+
+button {
+  border: black solid 1px;
+  background: none;
+  padding: 0.5rem;
+  color: black;
+  border-radius: 5px;
+
+  &:hover {
+    opacity: 0.7;
+    cursor: pointer;
+  }
 }
 
 main {
@@ -23,9 +42,14 @@ section {
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-bottom: 1rem;
+  margin: 1rem 0;
   padding: 1rem 2rem;
   border: black solid 1px;
+  border-radius: 5px;
+}
+
+.shadow {
+  box-shadow: 0 0 1rem 0 (rgba(0, 0, 0, 0.282));
 }
 
 .user-card {
@@ -33,8 +57,9 @@ section {
   width: 100%;
   display: flex;
   align-items: center;
-  margin-bottom: 1rem;
+  margin: 1rem 0;
   padding: 1rem 2rem;
+  border-radius: 5px;
 }
 
 .user-link {

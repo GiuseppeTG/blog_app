@@ -1,18 +1,11 @@
 <main>
-  <a href="/users" class="return-button">
-    <button type="button">
-      Return
-    </button>
-  </a>
-  <%= link_to user_path(@user) do%>
-    <div class="user-card"> <%# this can be a partial %>
-        <img src="<%=@user.photo || image_url('no_profile_pic.png') %>" alt="<%=@user.name %>" class="user-image" />
-        <h2 class="user-name"><%= @user[:name] %></h2> 
-      <p class="posts-counter">Posts: <%= @user[:posts_counter] %> </p>
-    </div>
+  <%= link_to users_path do%>
+    <button type="button" class="return-button">Return</button>
   <%end%>
+   
+  <%= render "users/card"%>
 
-  <section class="bio">
+  <section class="bio shadow">
     <h2>Bio</h2>
     <p><%= @user[:bio] %></p>
   </section>
@@ -24,18 +17,19 @@
   <section class="user-posts-small">
     <h2>Posts by <%=@user[:name]%></h2>
     <% @recent_posts.each do |post| %>
-      <div class="post-container-small">
+      <div class="post-container-small shadow">
         <div class="title-button">
           <h3><%= post[:title]%></h3>
-          <a class="see-post-button" href="<%=@user[:id]%>/posts/<%=post[:id]%>">
-            <button type="button">See this post</button>
-          </a>  
+          <%= link_to user_post_path(@user, post) do%>
+            <button type="button">See post</button>
+          <%end%>  
         </div>
         <p><%= post[:text] %></p>
       </div>
     <% end %>
   </section>
-  <a href="/users/<%=@user[:id]%>/posts" class="see-more-button">
-    <button type="button">See all posts</button>
-  </a>
+  <%= link_to user_posts_path(@user) do%>
+    <button type="button" class="see-more-button">See all posts</button>
+  <%end%>
+  
 </main>

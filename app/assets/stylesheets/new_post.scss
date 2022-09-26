@@ -1,0 +1,46 @@
+@import 'variables.scss';
+
+.section-header {
+  font-size: 2rem;
+  font-weight: 400;
+  width: fit-content;
+  margin: auto;
+}
+
+.new-post-form {
+  border: black solid 1px;
+  padding: 1rem 2rem;
+  list-style: none;
+  min-width: 300px;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-family: $poppins;
+  margin: 2rem auto;
+}
+
+.new-post-form li {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.submit-button {
+  width: 100px;
+  margin: auto;
+  padding: 0.5rem;
+  border: black solid 1px;
+  border-radius: 5px;
+  background: none;
+}
+
+#post_text,
+#post_title {
+  padding: 0.5rem;
+}
+
+.new-post-return {
+  width: fit-content;
+  margin: auto;
+}

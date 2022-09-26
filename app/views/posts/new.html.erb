@@ -1,11 +1,13 @@
-<h1>New post</h1>
+<main>
 
-<%= render "form", post: @post %>
+  <section>
+    <h2 class="section-header">New post</h2>
 
-<br>
+    <%= render "form", post: @post %>
 
-<div>
-  <%= link_to user_posts_path do%>
-    <button>Back to profile</button>
-  <%end%>
-</div>
+    <%= link_to user_posts_path do%>
+      <button class="new-post-return">Back to profile</button>
+    <%end%>
+  </section>
+
+</main>
