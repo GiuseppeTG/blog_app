@@ -42,12 +42,14 @@ RSpec.describe 'User management', type: :request do
 end
 
 RSpec.describe 'Users index page', type: :feature do
+  @user = User.find_by(id: 1)
+  p @user[:id]
   scenario 'Can see index page' do
     visit users_path
     expect(page).to have_content('Users')
   end
-  scenario 'Can see index page' do
+  scenario 'Can see profile pic of users' do
     visit users_path
-    expect(page).to have_content('Users')
+    expect(page).to have_xpath('//a', count: 3)
   end
 end
