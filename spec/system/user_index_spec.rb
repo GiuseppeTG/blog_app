@@ -2,11 +2,16 @@ require 'rails_helper'
 
 RSpec.describe 'In the users index page', type: :system do
   before(:each) do
-    @user1 = User.create(name: 'AsheTest', photo: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ashe_9.jpg',
+    @user1 = User.create(name: 'AsheTest',
+                         photo: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ashe_9.jpg',
                          bio: 'I am a boring adc.')
+
     @user2 = User.create(name: 'TeemoTest',
-                         photo: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Teemo_25.jpg', bio: 'I place mushrooms everywhere')
-    @user3 = User.create(name: 'JinxTest', photo: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jinx_37.jpg',
+                         photo: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Teemo_25.jpg',
+                         bio: 'I place mushrooms everywhere')
+
+    @user3 = User.create(name: 'JinxTest',
+                         photo: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jinx_37.jpg',
                          bio: 'I am a boring adc.')
   end
 
