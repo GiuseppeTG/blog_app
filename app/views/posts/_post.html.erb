@@ -2,7 +2,9 @@
   <div class="post-content">
     <div class="post-main-content">
       <div class="title-button">
-        <h3><%= @post[:title]%></h3>
+      <%= link_to user_post_path(@user, @post) do%>
+        <%=@post[:title]%>
+      <%end%>
         <a class="see-post-button" href="posts/<%=@post[:id]%>">
           <button type="button">See this post</button>
         </a>  

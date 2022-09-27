@@ -13,9 +13,12 @@ User.create(name: 'Teemo', photo: 'https://ddragon.leagueoflegends.com/cdn/img/c
 User.create(name: 'Jinx', photo: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jinx_37.jpg',
             bio: 'I am a boring adc.')
 
-Post.create(author: User.find_by(name: 'Ashe'), title: 'Ashe post title', text: 'Ashe post content')
-Post.create(author: User.find_by(name: 'Jinx'), title: 'Jinx post title', text: 'Jinx post content')
-Post.create(author: User.find_by(name: 'Teemo'), title: 'Teemo post title', text: 'Teemo post content')
+Post.create(author: User.find_by(name: 'Ashe'), title: 'Ashe post title1', text: 'Ashe post content')
+Post.create(author: User.find_by(name: 'Ashe'), title: 'Ashe post title2', text: 'Ashe post content')
+Post.create(author: User.find_by(name: 'Ashe'), title: 'Ashe post title3', text: 'Ashe post content')
+Post.create(author: User.find_by(name: 'Ashe'), title: 'Ashe post title4', text: 'Ashe post content')
+Post.create(author: User.find_by(name: 'Jinx'), title: 'Jinx post title1', text: 'Jinx post content')
+Post.create(author: User.find_by(name: 'Teemo'), title: 'Teemo post title1', text: 'Teemo post content')
 
 Comment.create(post: Post.find_by(text: 'Jinx post content'), author: User.find_by(name: 'Ashe'), text: 'Ashe comment')
 Comment.create(post: Post.find_by(text: 'Jinx post content'), author: User.find_by(name: 'Teemo'),
