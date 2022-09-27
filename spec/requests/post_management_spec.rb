@@ -17,26 +17,26 @@ end
 
 RSpec.describe 'Post management', type: :request do
   it "Redirects to the posts's page" do
-    get '/users/7/posts'
+    get '/users/1/posts'
     expect(response).to render_template(:index)
   end
 
   it 'Redirects to the specific post page' do
-    get '/users/7/posts/1'
+    get '/users/1/posts/1'
     expect(response).to render_template(:show)
   end
 
   describe 'Posts view' do
     it 'Has a post related heading' do
-      get '/users/7/posts'
-      expect(response.body).to include('A list of posts')
+      get '/users/1/posts'
+      expect(response.body).to include('Return')
     end
   end
 
   describe 'Specific post view' do
     it 'Has a post related heading' do
-      get '/users/7/posts/1'
-      expect(response.body).to include('A specific post')
+      get '/users/1/posts/1'
+      expect(response.body).to include('Return')
     end
   end
 end
