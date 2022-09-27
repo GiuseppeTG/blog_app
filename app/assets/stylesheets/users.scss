@@ -8,8 +8,18 @@
 }
 
 body {
-  background: linear-gradient(rgb(218, 250, 255), rgb(220, 223, 255));
+  background: linear-gradient(rgb(218, 250, 255), rgb(162, 133, 221), rgb(247, 148, 117));
   min-height: 100vh;
+  color: $black;
+}
+
+main {
+  width: 95%;
+  max-width: 800px;
+  min-width: 300px;
+  margin: 8rem auto 8rem auto;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
@@ -35,27 +45,25 @@ button {
   }
 }
 
-main {
-  width: 95%;
-  max-width: 800px;
-  min-width: 300px;
-  margin: 8rem auto 8rem auto;
-  display: flex;
-  flex-direction: column;
-}
-
 section {
   display: flex;
   flex-direction: column;
   width: 100%;
   margin: 1rem 0;
   padding: 1rem 2rem;
-  border: black solid 1px;
+  border: rgba(255, 255, 255, 0.613) solid 1px;
   border-radius: 5px;
+  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.076));
+}
+
+input {
+  background: none;
+  border: rgba(255, 255, 255, 0.576) solid 1px;
+  border-radius: 0.25rem;
 }
 
 .shadow {
-  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.225);
+  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.225);
 }
 
 .user-card {
