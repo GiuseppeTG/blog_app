@@ -1,0 +1,55 @@
+@import 'variables.scss';
+
+.log-in {
+  max-width: 375px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.log-in h2 {
+  margin-bottom: 1rem;
+}
+
+.new_user {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.string-input input {
+  width: 100%;
+  padding: 0.25rem;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.262);
+  border-radius: 0.25rem;
+}
+
+.string-input {
+  margin-bottom: 0.5rem;
+}
+
+.remember-me-field {
+  margin-top: 1rem;
+}
+
+.log-in-button {
+  padding: 0.25rem;
+  background: none;
+  border: $black solid 1px;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  margin: 1rem 0;
+  transition: 0.3s;
+
+  &:hover {
+    color: green;
+    border: green solid 1px;
+    box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.225);
+  }
+}
+
+.send-password {
+  font-size: 0.9rem;
+  align-self: center;
+}
