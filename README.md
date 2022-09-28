@@ -29,6 +29,12 @@ code editor and browser
 - Twitter: [@giusetomasini](https://twitter.com/giusetomasini)
 - LinkedIn: [Giuseppe Tomasini](https://www.linkedin.com/in/giuseppe-tomasini-67ba101a8/)
 
+👤 **Waqas Ahmad**
+
+- GitHub: [@githubhandle](https://github.com/waqaskanju)
+- Twitter: [@twitterhandle](https://twitter.com/waqaskanju)
+- LinkedIn: [@LinkedIn](https://linkedin.com/in/waqaskanju)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
