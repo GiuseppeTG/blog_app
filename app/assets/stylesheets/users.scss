@@ -20,6 +20,7 @@ main {
   margin: 8rem auto 8rem auto;
   display: flex;
   flex-direction: column;
+  color: $black;
 }
 
 a {
@@ -53,7 +54,7 @@ section {
   padding: 1rem 2rem;
   border: rgba(255, 255, 255, 0.613) solid 1px;
   border-radius: 5px;
-  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.076));
+  background: linear-gradient(rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.076));
 }
 
 input {
@@ -62,12 +63,18 @@ input {
   border-radius: 0.25rem;
 }
 
+textarea {
+  background: none;
+  border: rgba(255, 255, 255, 0.629) solid 1px;
+  border-radius: 0.25rem;
+}
+
 .shadow {
   box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.225);
 }
 
 .user-card {
-  border: black solid 1px;
+  border: rgba(255, 255, 255, 0.621) solid 1px;
   width: 100%;
   display: flex;
   align-items: center;
