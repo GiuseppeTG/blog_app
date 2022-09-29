@@ -5,7 +5,6 @@ class Api::V1::CommentsController < Api::V1::ApplicationController
   end
 
   def create
-    p params
     comment = Comment.new(comment_params)
 
     if comment.save
