@@ -5,12 +5,13 @@ class Api::V1::CommentsController < Api::V1::ApplicationController
   end
 
   def create
-    comment.user_id = current_user
+    p params
+    comment = Comment.new(comment_params)
 
     if comment.save
       render json: { status: 'SUCCESS', message: 'Saved comment', data: comment }, status: :ok
     else
-      render json: { status: 'ERROR', message: 'Comment not saved', data: comment.errors },
+      render json: { status: 'ERROR', message: 'Comment not saved', data: comment.errors.full_messages },
              status: :unprocessable_entity
     end
   end
@@ -18,6 +19,6 @@ class Api::V1::CommentsController < Api::V1::ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:text).merge(post_id: params[:post_id])
+    params.require(:comment).permit(:text).merge(post_id: params[:post_id], author: User.first)
   end
 end

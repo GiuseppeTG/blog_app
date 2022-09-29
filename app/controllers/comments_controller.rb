@@ -20,8 +20,8 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    redirect_to user_post_path, notice: 'Post deleted'
     Comment.find(params[:id]).destroy
-    redirect_to user_post_url, notice: 'Post deleted'
   end
 
   private
