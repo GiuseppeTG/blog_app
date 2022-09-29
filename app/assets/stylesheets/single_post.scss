@@ -12,3 +12,8 @@
 .counters > :last-child {
   margin-left: auto;
 }
+
+.action-container {
+  display: flex;
+  gap: 1rem;
+}

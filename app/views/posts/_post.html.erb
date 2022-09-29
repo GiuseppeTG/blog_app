@@ -7,7 +7,8 @@
       <%end%>
         <a class="see-post-button" href="posts/<%=@post[:id]%>">
           <button type="button">See this post</button>
-        </a>  
+        </a> 
+         
       </div>
       <p><%=@post[:text]%></p>
     </div>
@@ -15,6 +16,7 @@
       <p>Comments: <%= @post[:comments_counter]%></p>
       <p>Likes: <%= @post[:likes_counter]%></p>
     </div>
+    
   </div>
   <div class="comments-list">
     <h3>Recent comments</h3> 

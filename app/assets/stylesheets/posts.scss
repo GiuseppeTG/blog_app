@@ -29,6 +29,7 @@
 }
 
 .commenter {
+  width: 100%;
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
@@ -38,6 +39,16 @@
   width: 2rem;
   height: 2rem;
   outline: none;
+}
+
+.comment-photo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.commenter > :last-child {
+  margin-left: auto;
 }
 
 .pagination-buttons {

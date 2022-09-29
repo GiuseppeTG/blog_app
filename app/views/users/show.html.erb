@@ -10,8 +10,10 @@
     <p><%= @user[:bio] %></p>
   </section>
 
-  <%= link_to new_user_post_path(@user) do%>
-    <button class="new-post-button">New post</button>
+  <% if current_user[:id] == @user[:id]%> 
+    <%= link_to new_user_post_path(@user) do%>
+      <button class="new-post-button">New post</button>
+    <%end%>
   <%end%>
 
   <section class="user-posts-small">
