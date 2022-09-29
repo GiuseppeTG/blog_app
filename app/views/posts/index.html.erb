@@ -6,8 +6,10 @@
 
   <%= render "users/card"%>
 
-  <%= link_to new_user_post_path do%>
-    <button type="button" class="return-button">New post</button>
+  <% if current_user.id = @user[:id]%> 
+    <%= link_to new_user_post_path(@user) do%>
+      <button class="new-post-button">New post</button>
+    <%end%>
   <%end%>
 
   <section class="posts-list">

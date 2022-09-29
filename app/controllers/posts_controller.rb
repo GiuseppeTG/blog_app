@@ -14,9 +14,7 @@ class PostsController < ApplicationController
     @comments = Comment.where(post: @post)
   end
 
-  def new
-    @post = Post.new
-  end
+  def new; end
 
   def create
     author = current_user
@@ -28,5 +26,10 @@ class PostsController < ApplicationController
     else
       render :new, locals: { post: post }
     end
+  end
+
+  def destroy
+    Post.find_by(id: params[:id]).destroy
+    redirect_to user_path(current_user), notice: 'Post deleted'
   end
 end
