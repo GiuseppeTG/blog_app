@@ -1,0 +1,150 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/v1/users/{id}/posts/{id}/comments":
+    get:
+      summary: Retrives comments
+      tags:
+      - Comments
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Comments found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  text:
+                    type: string
+                  created_at:
+                    type: string
+                  updated_at:
+                    type: string
+                  author_id:
+                    type: integer
+                  post_id:
+                    type: integer
+                required:
+                - id
+        '404':
+          description: Posts not found
+    post:
+      summary: Post a comment
+      tags:
+      - Comment
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Comments created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  text:
+                    type: string
+                required:
+                - id
+        '404':
+          description: Comment not created
+  "/api/v1/users/{id}/posts":
+    get:
+      summary: Retrives posts
+      tags:
+      - Posts
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Posts found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  title:
+                    type: string
+                  text:
+                    type: string
+                  comment_counter:
+                    type: integer
+                  likes_counter:
+                    type: integer
+                  created_at:
+                    type: string
+                  updated_at:
+                    type: string
+                  author_id:
+                    type: integer
+                required:
+                - id
+        '404':
+          description: Posts not found
+  "/api/v1/users/{id}":
+    get:
+      summary: Retrives a user
+      tags:
+      - Users
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: User found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  photo:
+                    type: string
+                  email:
+                    type: string
+                  bio:
+                    type: string
+                  posts_counter:
+                    type: integer
+                  role:
+                    type: string
+                  created_at:
+                    type: string
+                  updated_at:
+                    type: string
+                required:
+                - id
+        '404':
+          description: User not found
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com
