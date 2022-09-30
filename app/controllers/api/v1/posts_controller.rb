@@ -6,6 +6,6 @@ class Api::V1::PostsController < Api::V1::ApplicationController
 
   def show
     post = Post.where(id: params[:id])
-    render json: { status: 'SUCCESS', message: 'Loaded post', data: post }, status: :ok
+    render json: { status: 'SUCCESS', message: 'Loaded Post', data: post }, status: :ok
   end
 end
