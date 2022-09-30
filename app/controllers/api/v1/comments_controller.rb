@@ -1,14 +1,14 @@
 class Api::V1::CommentsController < Api::V1::ApplicationController
   def index
     comments = Comment.where(post_id: params[:post_id])
-    render json: { status: 'SUCCESS', message: 'Loaded comments', data: comments }, status: :ok
+    render json: { status: 'Success', message: 'Loaded comments', data: comments }, status: :ok
   end
 
   def create
     comment = Comment.new(comment_params)
 
     if comment.save
-      render json: { status: 'SUCCESS', message: 'Saved comment', data: comment }, status: :ok
+      render json: { status: 'Success', message: 'Saved comment', data: comment }, status: :ok
     else
       render json: { status: 'ERROR', message: 'Comment not saved', data: comment.errors.full_messages },
              status: :unprocessable_entity
